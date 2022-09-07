@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base{
+    body{
+        @apply max-w-6xl mx-auto px-4 font-poppins transition-all duration-300 ease-linear scroll-smooth;
+        @apply dark:bg-darkColor dark:text-lightColor;
+    }
+}
+.nav-active{
+    @apply dark:text-white text-purple-500
+}
+.active{
+    @apply dark:bg-brightPurple bg-brightPurple text-white 
+}
+.inactive{
+    @apply text-brightPurple dark:text-white dark:bg-darkSecondary bg-purple-100 dark:hover:bg-brightPurple hover:bg-brightPurple hover:text-white
+}
+.heading-1{
+    @apply text-4xl my-2;
+}
+.heading-2{
+    @apply text-3xl my-2;
+}
+.heading-3{
+    @apply text-2xl my-2;
+}
+.heading-4{
+    @apply text-xl my-2;
+}
