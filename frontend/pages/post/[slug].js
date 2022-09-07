@@ -6,6 +6,7 @@ import client from "../../client";
 import { getPostDetails } from "../../services";
 import { PostDetails } from "../../components";
 import { useRouter } from "next/router";
+import Loader from "../../Utils/Loader";
 
 const Post = ({ post }) => {
   const router = useRouter()
