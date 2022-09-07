@@ -35,6 +35,9 @@ const CommentForm = ({ _id }) => {
         if(getValues('storeData')){
           window.localStorage.setItem('name',getValues('name'))
           window.localStorage.setItem('email',getValues('email'))
+        }else{
+          window.localStorage.removeItem('name',getValues('name'))
+          window.localStorage.removeItem('email',getValues('email'))
         }
 
       
