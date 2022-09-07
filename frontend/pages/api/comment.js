@@ -17,9 +17,10 @@ export default async function comment(req, res) {
             }
         })
     } catch (err) {
+        console.log('error occured while coment',err)
         return res.status(500).json({message:"couldn't sent the message", err})
     }
-    
+    console.log("comment submiited")
     return res.status(200).json({message:"comment sent"})
 }
   
