@@ -30,7 +30,7 @@ const LatestBlogs = () => {
         {recentPosts.map((post) => (
           <>
             {/* <!-- Single Blog div --> */}
-            <div className="flex items-center justify-start gap-2">
+            <div key={post.title} className="flex items-center justify-start gap-2">
               {/* <!-- Author and time --> */}
               <Avatar
                 img={urlFor(post?.authorImage?.asset._ref).width(50).url()}

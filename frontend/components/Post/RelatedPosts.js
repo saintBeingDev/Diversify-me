@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { getRecentPosts, getSimilarPosts } from "../../services";
+import { getSimilarPosts } from "../../services";
 import { urlFor } from "../../client";
 import Image from "next/image";
-import { useNextSanityImage } from "next-sanity-image";
-import blog1Img from "../../images/blogimg1.jpg";
 import { useRouter } from "next/router";
 
 const RelatedPosts = ({category}) => {
@@ -26,8 +24,7 @@ const RelatedPosts = ({category}) => {
   <h3 className="text-center text-2xl font-extrabold mt-4">Related articles👇</h3>
       <div className="p-2 mb-10 md:p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         { relatedPosts.map((post) =>(
-          <>
-            <div key={post.title} className="w-full md:w-full flex items-center">
+            <div key={post?.title} className="w-full md:w-full flex items-center">
               <div
                 className="h-20 w-20 md:h-32 md:w-32 lg:w-44 lg:h-44 flex-none bg-cover rounded-t md:rounded-t-none md:rounded-l overflow-hidden relative"
                 height="32"
@@ -53,7 +50,6 @@ const RelatedPosts = ({category}) => {
                 </div>
               </div>
             </div>
-          </>
         ))}
       </div>
   

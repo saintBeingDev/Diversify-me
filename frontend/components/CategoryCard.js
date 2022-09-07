@@ -79,7 +79,7 @@ const CategoryCard = ({filteredPosts}) => {
             </div>
             <div className="flex gap-4 pt-2">
             {post.categories.map((cat) => (
-              <h6 className="mt-1.5 rounded-lg px-2 py-1 bg-green-200 text-green-700 dark:bg-secondary dark:text-gray-300 text-xs w-fit">
+              <h6 key={cat.title} className="mt-1.5 rounded-lg px-2 py-1 bg-green-200 text-green-700 dark:bg-secondary dark:text-gray-300 text-xs w-fit">
                 {cat.title}
               </h6>
             ))}
