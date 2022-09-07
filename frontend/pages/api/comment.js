@@ -4,7 +4,7 @@ export default async function comment(req, res) {
 
     const { name, text, email, _id } = JSON.parse(req.body)
     try {
-        client.config({
+        await client.config({
             token: process.env.SANITY_API_TOKEN_COMMENT
         }).create({
             _type: 'comment',
