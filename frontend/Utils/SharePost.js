@@ -6,8 +6,7 @@ import {
 } from 'next-share';
 
 const SharePost = ({slug}) => {
-  console.log(slug)
-  const startsWith = process.env.DEPLOYED_URL
+  const startsWith = process.env.NEXT_PUBLIC_DEPLOYED_URL
   return (
     <div className="flex gap-2">
       <LinkedinShareButton url={`${startsWith}/post/${slug}`}>
