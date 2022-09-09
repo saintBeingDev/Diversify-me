@@ -7,7 +7,7 @@ import {
 
 const SharePost = ({slug}) => {
   console.log(slug)
-  const startsWith = process.env.DEPLOYED_URL || 'http://localhost:3000'
+  const startsWith = process.env.DEPLOYED_URL
   return (
     <div className="flex gap-2">
       <LinkedinShareButton url={`${startsWith}/post/${slug}`}>
