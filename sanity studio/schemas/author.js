@@ -9,6 +9,21 @@ export default {
       type: 'string',
     },
     {
+      name: 'location',
+      title: 'Location',
+      type: 'string',
+    },
+    {
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+    },
+    {
+      name: 'profession',
+      title: 'Profession',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

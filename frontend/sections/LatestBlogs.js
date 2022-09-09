@@ -18,7 +18,7 @@ const LatestBlogs = () => {
   }, []);
 
   return (
-    <div className="h-auto dark:bg-darkSecondary bg-white rounded-xl mt-12 md:mt-0 py-6 px-4 container">
+    <div className="h-auto w-full hover:drop-shadow-2xl bg-white duration-700 ease-in-out dark:bg-darkColor hover:dark:bg-darkSecondary rounded-xl mt-20 md:mt-0 py-6 px-4 container">
       {/* <!-- Heading --> */}
       <div className="flex items-center justify-start gap-3 w-auto mx-4 mb-6 border-b dark:border-gray-500 pb-2">
         <p className="text-2xl">🔥</p>
@@ -30,8 +30,7 @@ const LatestBlogs = () => {
         {recentPosts.map((post) => (
           <>
             {/* <!-- Single Blog div --> */}
-            <div key={post.title} className="flex items-center justify-start gap-2">
-              {/* <!-- Author and time --> */}
+            {/* <div key={post?.title} className="flex items-center justify-start gap-2">
               <Avatar
                 img={urlFor(post?.authorImage?.asset._ref).width(50).url()}
                 rounded={true}
@@ -39,9 +38,8 @@ const LatestBlogs = () => {
               />
               <h3 className="text-sm"> {post.name} </h3>
               <p className="text-sm text-gray-400"> {moment(post && post.publishedAt).format("MMM DD, YYYY")}</p>
-              {/* <!-- End of Author and time --> */}
-            </div>
-            <div className="flex w-full mb-4">
+            </div> */}
+            <div key={post.slug} className="flex w-full mb-4">
               <div className="h-20 w-32 overflow-hidden mr-4 relative">
                 <Image
                   src={urlFor(post?.mainImage).url()}

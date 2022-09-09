@@ -14,11 +14,10 @@ const FeaturedPostCard = ({ post }) => {
             src={urlFor(post?.mainImage).url()}
             layout="fill"
             className="object-cover relative h-full w-full"
-            // objectFit="cover"
           />
         </div>
-        <div className="absolute w-full h-full backdrop-blur backdrop-contrast-75 md:h-0 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500 px-10">
-        {/* <div className="absolute w-full h-full bg-gradient-to-r from-brightPurple via-transparent to-transparent bg-opacity-5 md:h-0 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500 px-10"> */}
+        {/* <div className="absolute w-full h-full backdrop-blur backdrop-contrast-75 md:h-0 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500 px-10"> */}
+        <div className="absolute w-full h-full bg-gradient-to-r from-brightPurple via-transparent to-transparent bg-opacity-5 md:h-0 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500 px-10">
           <h6 className="mt-8 md:mt-12 bg-gray-800 w-fit px-2 md:px-4 py-0.5 text-white rounded-md uppercase text-xs md:text-sm font-semibold tracking-wider">
             Featured
           </h6>
@@ -27,7 +26,7 @@ const FeaturedPostCard = ({ post }) => {
               {post?.title}
             </h3>
           </Link>
-          <p className="sm:w-72 md:w-[450px] md:mt-2 lg:w-3/5 text-xs mb-2 text-white font-semibold text-left md:text-sm ">
+          <p className="hidden md:block sm:w-72 md:w-[450px] md:mt-2 lg:w-3/5 text-xs mb-2 text-white font-semibold text-left md:text-sm ">
             {post?.excerpt}
           </p>
         </div>

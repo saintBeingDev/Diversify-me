@@ -10,7 +10,7 @@ export const Serializers = {
         const width = props?.options?.imageOptions?.width
         const height = props?.options?.imageOptions?.height
         
-        console.log("image",props)
+        // console.log("image",props)
         if (!value._ref) {
           return null;
         }

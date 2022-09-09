@@ -58,7 +58,7 @@ const PostContent = ({post}) => {
                 {moment(publishedAt).format("MMM DD, YYYY")}
               </p>
             </div>
-            <div className="w-24 borer-2 border-blue-500 col-span-2">
+            <div className="w-24 borer-2 mt-2 col-span-2">
               <p className=" text-gray-500 text-sm">🚀{readTime} min read</p>
             </div>
             {/* <!-- End of Author and time --> */}

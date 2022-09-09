@@ -43,7 +43,7 @@ const FeaturedPost = () => {
         {/* buttons */}
         
         <div className="absolute bottom-0 right-0 flex items-center justify-between mb-6 mr-8 gap-6">
-        <div className="backdrop-blur-xl w-full border-1 p-2 text-white rounded-xl shadow-xl">
+        <div className="backdrop-blur-xl backdrop-contrast-75 w-full border-1 p-2 text-white rounded-xl shadow-xl">
           <button
             onClick={() => slider?.current?.slickPrev()}
             className="flex hover:cursor-pointer"
@@ -64,7 +64,7 @@ const FeaturedPost = () => {
             </svg>
           </button>
         </div>
-        <div className="backdrop-blur-2xl backdrop-contrast-75 w-full border-1 p-2  rounded-xl text-white shadow-xl">
+        <div className="backdrop-blur-xl backdrop-contrast-75 w-full border-1 p-2  rounded-xl text-white shadow-xl">
           <button
             onClick={() => slider?.current?.slickNext()}
             className="flex hover:cursor-pointer"

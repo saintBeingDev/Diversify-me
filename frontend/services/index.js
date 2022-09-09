@@ -41,11 +41,20 @@ export const getAllAuthors =async ()=>{
                     }
                },
           bio,
-      
       }  
     `
 
     const result = await client.fetch(query)
+    return result
+}
+export const getSingleAuthorDetails =async (slug)=>{
+
+    const query = groq`*[_type == "author" && slug.current == $slug][0]{
+        ...,
+        "postsCount": count(*[_type=='post' && references(^._id)])
+      }`
+
+    const result = await client.fetch(query,{slug})
     return result
 }
 
@@ -53,6 +62,11 @@ export const getPostDetails = async (slug) =>{
     
     const query = groq`*[_type == "post" && slug.current == $slug][0]{
     _id,
+    likes,
+    slug,
+    love,
+    claps,
+    party,
     title,
     publishedAt,
     excerpt,

@@ -1,4 +1,3 @@
-import { getRecentPosts } from "../services";
 import {
   FeaturedPost,
   Categories,

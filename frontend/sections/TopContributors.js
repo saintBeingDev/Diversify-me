@@ -1,5 +1,6 @@
 import { Avatar } from "flowbite-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { urlFor } from "../client";
 import { getAllAuthors } from "../services";
@@ -16,7 +17,7 @@ const TopContributors = () => {
   }, []);
 
   return (
-    <div className="h-auto bg-purple-50 dark:bg-darkSecondary shadow-xl rounded-xl py-6 px-4 container">
+    <div className="h-auto hover:drop-shadow-2xl bg-white duration-700 ease-in-out dark:bg-darkColor hover:dark:bg-darkSecondary rounded-xl py-6 px-4 container">
       {/* <!-- Heading --> */}
       <div className="flex items-center justify-start gap-3 w-auto mx-4 mb-6 dark:border-gray-600 border-b-2 pb-2">
         <svg
@@ -47,7 +48,10 @@ const TopContributors = () => {
               </div>
 
               <p className="text-darkGrayishBlue dark:text-gray-500 text-sm md:text-base font-medium hover:cursor-pointer">
+               <Link href={`/author/${author.slug}`}>
                {author?.name}
+               </Link>
+               
               </p>
             </div>
           ))}

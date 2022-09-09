@@ -69,6 +69,30 @@ export default {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+      name: 'likes',
+      title: 'Likes',
+      type: 'number',
+      initialValue: 0
+    },
+    {
+      name: 'party',
+      title: 'Party',
+      type: 'number',
+      initialValue: 0
+    },
+    {
+      name: 'claps',
+      title: 'Claps',
+      type: 'number',
+      initialValue: 0
+    },
+    {
+      name: 'love',
+      title: 'Love',
+      type: 'number',
+      initialValue: 0
+    },
   ],
 
   preview: {
