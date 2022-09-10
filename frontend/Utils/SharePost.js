@@ -9,7 +9,7 @@ const SharePost = ({slug}) => {
   const startsWith = process.env.NEXT_PUBLIC_DEPLOYED_URL
   return (
     <div className="flex gap-2">
-      <LinkedinShareButton url={`${startsWith}/post/${slug}`}>
+      <LinkedinShareButton url={`${req.protocol}://${req.get("host")}/post/${slug}`}>
         <FaLinkedin className="bg-[#525086] p-2 w-10 h-10 flex items-center justify-center rounded-full hover:cursor-pointer hover:bg-blue-600 text-white transition-colors"/>
       </LinkedinShareButton>
       
