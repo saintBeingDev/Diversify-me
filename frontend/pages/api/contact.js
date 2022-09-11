@@ -1,27 +1,26 @@
-import nodemailer from "nodemailer";
+const sgMail = require('@sendgrid/mail')
 
-export default async (req, res) => {
-  const options = JSON.parse(req.body);
-  try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMPT_HOST,
-      port: process.env.SMPT_PORT,
-      service: process.env.SMPT_SERVICE,
-      auth: {
-        user: process.env.SMPT_MAIL,
-        pass: process.env.SMPT_PASSWORD,
-      },
-    });
+export default async function(req, res) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-    const mailOptions = {
-      from: process.env.SMPT_MAIL,
-      to: options.email,
-      subject: options.subject,
-      text: options.message,
-    };
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({success: true,msg:"mail sent"})
-} catch (error) {
-    res.status(500).json({success: false,msg:"mail not sent", error})
+  const { email, subject, text } = JSON.parse(req.body)
+
+  const msg = {
+    to: 'mrsaint0403@gmail.com', // Change to your recipient
+    from: 'omnikam0404@gmail.com', // Change to your verified sender
+    subject: `Contact request for - ${subject}`,
+    text: text,
+    html: `
+      <p>Sent from: ${email}</p>
+      <div>${text}</div>
+    `
   }
-};
+
+  try {
+    await sgMail.send(msg)
+    res.status(200).send('Message sent successfully.')
+  } catch (error) {
+    console.log('ERROR', error)
+    res.status(400).send('Message not sent.')
+  }
+}

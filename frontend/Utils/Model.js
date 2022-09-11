@@ -16,7 +16,7 @@ const Model = () => {
       })
 
       try {
-        const res = await fetch('/api/mail',{
+        await fetch('/api/mail',{
           method:"POST",
           headers:{
             "Content-Type":'application/json',

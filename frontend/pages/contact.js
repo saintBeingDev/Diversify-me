@@ -7,19 +7,13 @@ const contact = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const {register, handleSubmit, formState: { errors }, reset} = useForm()
    const onSubmitForm= async(values)=>{
-    // let config= {
-    //   method:"post",
-    //   url:`/api/contact`,
-    //   headers:{
-    //     'Content-Type':'application/json'
-    //   },
-    //   data:values
-    // }
+    console.log(values)
     try {
-      await fetch('/api/mail',{
+      const res = await fetch('/api/contact',{
         method:"post",
         body:JSON.stringify(values)
       })
+      console.log(res)
     } catch (error) {
       console.log('pages/contact',error)
     }
@@ -62,7 +56,7 @@ const contact = () => {
           </div>
           <div className="sm:col-span-2">
               <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-              <textarea {...register("text", { required: true })} id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 resize-none dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+              <textarea {...register("text", { required: true })} name='text' id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 resize-none dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
               {errors.text && (
               <p className="text-red-700 dark:text-red-400 text-sm pl-2 pt-2">
                 Please leave a valid message
