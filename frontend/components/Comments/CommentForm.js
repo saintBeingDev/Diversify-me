@@ -72,6 +72,7 @@ const CommentForm = ({ _id }) => {
               <input
                 {...register("name", { required: true })}
                 type="text"
+                name="name"
                 placeholder="Your Name"
                 className="w-full rounded py-3  px-[14px] text-body-color text-base border border-[f0f0f0] outline-none first-letter:focus-visible:shadow-none focus:border-primary dark:border-white dark:text-gray-200 dark:bg-darkColor dark:focus:border-white"
               />
@@ -90,6 +91,7 @@ const CommentForm = ({ _id }) => {
                     message: "Entered value does not match email format",
                   },
                 })}
+                name="email"
                 type="email"
                 placeholder="Your Email"
                 className="w-full rounded  py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary dark:border-white dark:text-gray-200 dark:bg-darkColor dark:focus:border-white"
@@ -109,7 +111,7 @@ const CommentForm = ({ _id }) => {
               placeholder="Your Message"
               className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] resize-none outline-none focus-visible:shadow-none focus:border-primary dark:border-white dark:text-gray-200 dark:bg-darkColor dark:focus:border-white"
             ></textarea>
-            {errors.name && (
+            {errors.text && (
               <p className="text-red-700 dark:text-red-400 text-sm pl-2 pt-2">
                 Please leave a valid message
               </p>
