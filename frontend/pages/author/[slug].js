@@ -17,7 +17,7 @@ const Author = ({ author }) => {
       <div className="flex items-center justify-center h-full w-full mt-2">
         <div className="absolute hover:shadow-2xl overflow-hidden w-44 md:w-64 h-44 md:h-64 rounded-full mx-auto top-24 md:top-16">
           <Image
-            src={urlFor(author.image).url()}
+            src={urlFor(author?.image).url()}
             layout="fill"
             objectFit="cover"
           />
@@ -27,36 +27,36 @@ const Author = ({ author }) => {
           <div className="h-32 w-full mt-16 md:mt-0 flex items-center justify-between ">
             <div className="md:ml-32">
               <div className="text-center dark:text-gray-300 text-lg md:text-2xl font-bold hover:cursor-pointer">
-                {author.postsCount}
+                {author?.postsCount}
               </div>
               <h2 className="dark:text-gray-400 w-full pl-2 md:pl-0">Contribution</h2>
             </div>
             <div className="flex items-center flex-col md:mr-20">
               <h2 className="pr-2 md:pr-0 text-center dark:text-gray-300 text-base md:text-lg font-semibold">
-                {author.email}
+                {author?.email}
               </h2>
               <h2 className="dark:text-gray-400 ">Contact me</h2>
               
             </div>
           </div>
           <div className=" flex flex-col gap-2 items-center h-32 w-full">
-            <h2 className="pt-3 text-4xl">👋{author.name}</h2>
+            <h2 className="pt-3 text-4xl">👋{author?.name}</h2>
             <h2 className="flex items-center text-gray-400 gap-2 capitalize">
               <span className="text-gray-400 text-xl">
                 <HiLocationMarker />
               </span>{" "}
-              {author.location}
+              {author?.location}
             </h2>
             <h2 className="flex items-center gap-2 text-gray-400 capitalize">
               <span className="text-gray-400 text-xl">
                 <FaGraduationCap />
               </span>{" "}
-              {author.profession}
+              {author?.profession}
             </h2>
           </div>
           <div className="pt-4 flex items-start justify-center text-center h-full w-full">
             <BlockContent
-              blocks={author.bio}
+              blocks={author?.bio}
               serializers={Serializers}
               imageOptions={{ width: 500, height: 500 }}
             />
