@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { getSingleAuthorDetails } from "../../services";
 import groq from "groq";
 import client, { urlFor } from "../../client";

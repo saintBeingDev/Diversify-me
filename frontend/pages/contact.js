@@ -6,20 +6,20 @@ import {useForm} from 'react-hook-form'
 const Contact = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const {register, handleSubmit, formState: { errors }, reset} = useForm()
-  //  const onSubmitForm= async(values)=>{
-  //   console.log(values)
-  //   try {
-  //     const res = await fetch('/api/contact',{
-  //       method:"post",
-  //       body:JSON.stringify(values)
-  //     })
-  //     console.log(res)
-  //   } catch (error) {
-  //     console.log('pages/contact',error)
-  //   }
+   const onSubmitForm= async(values)=>{
+    console.log(values)
+    try {
+      const res = await fetch('/api/contact',{
+        method:"post",
+        body:JSON.stringify(values)
+      })
+      console.log(res)
+    } catch (error) {
+      console.log('pages/contact',error)
+    }
     
 
-  // }
+  }
   useEffect(() => {
     setDomLoaded(true);
   }, []);
