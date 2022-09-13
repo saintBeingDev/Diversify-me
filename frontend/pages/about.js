@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import aboutImg from "../images/about2.jpg";
 import Image from "next/image";
 import Model from "../Utils/Model";
-const about = () => {
+
+const About = () => {
   const [domLoaded, setDomLoaded] = useState(false);
 
   useEffect(() => {
@@ -35,4 +36,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

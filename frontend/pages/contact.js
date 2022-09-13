@@ -3,7 +3,7 @@ import Model from '../Utils/Model'
 import {useForm} from 'react-hook-form'
 
 
-const contact = () => {
+const Contact = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const {register, handleSubmit, formState: { errors }, reset} = useForm()
    const onSubmitForm= async(values)=>{
@@ -72,4 +72,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
