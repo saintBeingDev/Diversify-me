@@ -70,7 +70,7 @@ export async function getStaticPaths() {
 
   return {
     paths: authors.map((slug) => ({ params: { slug } })),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
