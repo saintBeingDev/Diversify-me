@@ -64,12 +64,12 @@ const Author = ({ author }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(
+  const authors = await client.fetch(
     groq`*[_type == "author" && defined(slug.current)][].slug.current`
   );
 
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths: authors.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 }
