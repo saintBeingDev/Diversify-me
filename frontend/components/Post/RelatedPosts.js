@@ -6,11 +6,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const RelatedPosts = ({category}) => {
+  console.log(category)
   const router = useRouter();
   const slug = router.query.slug
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
+    if(category)
       getSimilarPosts(category[0].current, slug).then((result) => {
         setRelatedPosts(result);
       })
