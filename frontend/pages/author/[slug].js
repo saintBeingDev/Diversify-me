@@ -9,9 +9,7 @@ import { FaGraduationCap } from "react-icons/fa";
 
 
 const Author = ({ author }) => {
-  // console.log(author);
-
-  return (
+    return (
     <>
       <div className="flex items-center justify-center h-full w-full mt-2">
         <div className="absolute hover:shadow-2xl overflow-hidden w-44 md:w-64 h-44 md:h-64 rounded-full mx-auto top-24 md:top-16">
@@ -57,7 +55,6 @@ const Author = ({ author }) => {
             <BlockContent
               blocks={author?.bio}
               serializers={Serializers}
-              imageOptions={{ width: 500, height: 500 }}
             />
           </div>
         </div>
@@ -73,7 +70,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
