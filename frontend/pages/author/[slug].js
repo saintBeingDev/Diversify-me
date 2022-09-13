@@ -10,7 +10,7 @@ import { FaGraduationCap } from "react-icons/fa";
 
 
 const Author = ({ author }) => {
-  console.log(author);
+  // console.log(author);
 
   return (
     <>
