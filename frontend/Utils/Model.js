@@ -1,10 +1,15 @@
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { Label, Modal } from "flowbite-react";
+import { useRouter } from "next/router";
 
 import React, { useState } from "react";
 
-const Model = () => {
+
+const Model = ({text}) => {
+    const router = useRouter()
+
 
     const [openModal, setOpenModal] = useState();
+    const [mainSend, setMailSend] = useState(false);
 
     const handleSubmit = async(e)=>{
       e.preventDefault()
@@ -23,7 +28,9 @@ const Model = () => {
           },
           body: JSON.stringify(formData)
         })
-        console.log(formData)
+        setMailSend(true)
+        window.location.reload();
+        
       } catch (error) {
         console.log('from model',error)
       }
@@ -32,7 +39,12 @@ const Model = () => {
 
   return (
     <>
-      <button className='hover:cursor-pointer text-blue-600 bg-white p-2 w-32 text-center rounded-lg' onClick={() => setOpenModal('form-elements')}>Join Us</button>
+      {
+        router.pathname === '/' ? 
+        <button className="w-4/5 md:w-full p-2 md:px-2 md:py-3 mx-auto my-4 bg-brightPurple text-white rounded-lg" onClick={() => setOpenModal('form-elements')}>
+       {text}
+      </button>:<button className='hover:cursor-pointer text-blue-600 bg-white p-2 w-32 text-center rounded-lg' onClick={() => setOpenModal('form-elements')}>{text}</button>
+      }
      <Modal show={openModal === 'form-elements'} size="md" position={'center'} popup={true} onClose={() => setOpenModal(undefined)}>       
      <Modal.Header />
         <Modal.Body>
@@ -73,7 +85,7 @@ const Model = () => {
             ></textarea>
             </div>
             <div className="w-full">
-              <button type='submit' className="mt-4 w-full text-white bg-brightPurple rounded p-3 transition hover:bg-opacity-90">Submit</button>
+              <button type='submit' className="mt-4 w-full text-white bg-brightPurple rounded p-3 transition hover:bg-opacity-90" disabled={mainSend}>{mainSend ? "Message sent":"Submit"}</button>
             </div>
             </form>
           </div>

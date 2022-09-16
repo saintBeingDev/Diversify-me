@@ -30,7 +30,7 @@ const About = () => {
             A platform for writing all your amazing thoughts for
             expressing it to world
           </h3>
-          {domLoaded && <Model />}
+          {domLoaded && <Model text={'Join us'}/>}
         </div>
       </div>
   );

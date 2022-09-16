@@ -32,7 +32,7 @@ const FeaturedPost = () => {
   };
 
   return (
-    <div className=" rounded-lg col-span-3 md:col-span-2 ">
+    <div className="md:inline hidden rounded-lg col-span-3 md:col-span-2 ">
       <div className="w-auto h-52 md:h-64 relative overflow-hidden rounded-xl ">
       <Slider ref={slider} {...settings}>
           { dataLoaded && featuredPosts.map((post) => (

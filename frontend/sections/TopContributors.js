@@ -4,12 +4,16 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { urlFor } from "../client";
 import { getAllAuthors } from "../services";
+import Model from "../Utils/Model";
 
 const TopContributors = () => {
   const [authors, setAuthors] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [domLoaded, setDomLoaded] = useState(false);
 
   useEffect(() => {
+    setDomLoaded(true);
+
     getAllAuthors().then((result) => {
       setAuthors(result);
       setDataLoaded(true);
@@ -17,7 +21,7 @@ const TopContributors = () => {
   }, []);
 
   return (
-    <div className="h-auto hover:drop-shadow-2xl bg-white duration-700 ease-in-out dark:bg-darkColor hover:dark:bg-darkSecondary rounded-xl py-6 px-4 container">
+    <div className="h-auto drop-shadow-2xl bg-white duration-700 ease-in-out dark:bg-darkColor hover:dark:bg-darkSecondary rounded-xl py-6 px-4 container">
       {/* <!-- Heading --> */}
       <div className="flex items-center justify-start gap-3 w-auto mx-4 mb-6 dark:border-gray-600 border-b-2 pb-2">
         <svg
@@ -57,10 +61,7 @@ const TopContributors = () => {
           ))}
       </div>
 
-      {/* <!-- submit blog button --> */}
-      <button className="w-4/5 md:w-full p-2 md:px-2 md:py-3 mx-auto my-4 bg-brightPurple text-white rounded-lg">
-        Become an Author 📝
-      </button>
+      {domLoaded && <Model text={'Become an Author 📝'}/>}
     </div>
   );
 };

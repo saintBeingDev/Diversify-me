@@ -18,9 +18,9 @@ export default async function(req, res) {
 
   try {
     await sgMail.send(msg)
-    res.status(200).send('Message sent successfully.')
+    res.status(200).send({message:'Message sent successfully.'})
   } catch (error) {
     console.log('ERROR', error)
-    res.status(400).send('Message not sent.')
+    res.status(400).send({message:'Problem occured during message sending. Please try again later'})
   }
 }

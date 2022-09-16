@@ -75,8 +75,8 @@ const PostDetails = ({ post }) => {
 
 
     {/* Comments form div */}
-      <Comment comments={post?.comments} count={post?.count} />
       <CommentForm _id={post._id}/>
+      <Comment comments={post?.comments} count={post?.count} />
     </>
   );
 };

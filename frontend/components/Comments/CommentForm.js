@@ -94,7 +94,7 @@ const CommentForm = ({ _id }) => {
                 name="email"
                 type="email"
                 placeholder="Your Email"
-                className="w-full rounded  py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary dark:border-white dark:text-gray-200 dark:bg-darkColor dark:focus:border-white"
+                className="w-full rounded py-3 px-[14px] text-body-color text-base border border-[f0f0f0] outline-none focus-visible:shadow-none focus:border-primary dark:border-white dark:text-gray-200 dark:bg-darkColor dark:focus:border-white"
               />
               {errors.email && (
                 <p className="text-red-700 dark:text-red-400 text-sm pl-2 pt-2">

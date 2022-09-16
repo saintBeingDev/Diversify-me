@@ -9,6 +9,7 @@ export const getAllPosts =async ()=>{
         title,
         excerpt,
         readTime,
+        author,
         "author": author->name,
         categories[] -> {
             title,

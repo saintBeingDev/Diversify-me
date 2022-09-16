@@ -5,9 +5,7 @@ import CategoryCard from "../../components/CategoryCard";
 const CategoryPost = () => {
   const [filteredPosts, setFilteredPosts] = useState("")
   return (
-    <div className="grid grid-cols-1 gap-2 md:gap-4 content-center text-center w-full max-h-full md:grid-cols-3">
-
-      
+    <div className="border-2 border-red-500 grid grid-cols-1 gap-2 md:gap-4 content-center text-center min-h-screen w-auto md:grid-cols-3">
       <div className="rounded-lg mt-4 w-full h-full col-span-3 md:col-span-full">
         <Categories />
         {/* This categoryCard is for 'All' category */}

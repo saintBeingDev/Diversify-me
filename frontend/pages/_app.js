@@ -41,9 +41,9 @@ function Loading(){
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <Loading/>
     <ThemeProvider attribute='class'>
     <Layout>
-    <Loading/>
       <Component {...pageProps} />
     </Layout>
     </ThemeProvider>
